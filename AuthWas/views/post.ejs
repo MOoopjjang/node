@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1">
+
+        <link href="/resources/bootstrap-4.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="/resources/jquery-3.4.1.min.js"></script>
+        <script src="/resources/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+        <title>글쓰기</title>
+        <style>
+            body{
+                display: flex;
+                padding: 0;
+                margin: 0;
+                width:100%;
+                height:100%;
+
+                justify-content: center;
+            }
+
+            .post-main-wrap{
+                display: flex;
+                width: 60%;
+                height:600px;
+
+                margin-top:100px;
+
+                flex-direction: column;
+            }
+        </style>
+
+        <script type="text/javascript">
+            function onCancel(){
+                window.location.href = '/main/m';
+            }
+        </script>
+    </head>
+    <body>
+        <div class="post-main-wrap">
+            <h1>글쓰기</h1>
+           <form method="post" action="/post/writeproc">
+               <table>
+                   <tr>
+                       <td><input type="text" value="<%= info.email%>" readonly /></td>
+                   </tr>
+                   <tr>
+                       <td><input type="text" value="<%= info.username%>" readonly /></td>
+                   </tr>
+
+                   <tr>
+                       <td><input style="width:300px;" type="text" name="title" placeholder="title" /></td>
+                   </tr>
+                   <tr>
+                       <td><textarea name="contents" rows="10" cols="100"></textarea></td>
+                   </tr>
+                    <tr>
+                       <td>
+                           <button type="submit" class="btn btn-primary">저장</button>
+                            <button type="button" class="btn btn-danger" onclick="onCancel()" >취소</button>
+                       </td>
+                   </tr>
+               </table>
+           </form>
+        </div>
+    </body>
+</html>
