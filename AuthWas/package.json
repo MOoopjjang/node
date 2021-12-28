@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=local node ws",
-    "dev": "cross-env NODE_ENV=dev node ws"
+    "start": "pm2 start ecosystem.config.js --only AuthWas-local",
+    "dev": "pm2 start ecosystem.config.js --only AuthWas-dev"
   },
   "author": "",
   "license": "ISC",
